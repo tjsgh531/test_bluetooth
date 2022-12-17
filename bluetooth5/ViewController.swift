@@ -28,31 +28,29 @@ extension ViewController: CBCentralManagerDelegate{
         switch central.state{
         case .unknown:
             print("unknown")
-            aaa.text = "unknown"
         case .resetting:
             print("resetting")
-            
-            aaa.text = "resetting"
         case .unsupported:
             print("unsupported")
-            aaa.text = "unsupported"
         case .unauthorized:
             print("unauthorized")
-            aaa.text = "unauthorized"
         case .poweredOff:
             print("PoweredOff")
-            aaa.text = "PoweredOff"
         case .poweredOn:
             print("PoweredOn")
-            aaa.text = "PoweredOn"
             centralManager.scanForPeripherals(withServices: nil)
         @unknown default:
             print("default")
         }
     }
     
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData:[String : Any], rssi RSSI: NSNumber) {
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print(peripheral)
-        aaa.text = peripheral as! String
     }
+    
+//
+//    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData:[String : Any], rssi RSSI: NSNumber) {
+//        print(peripheral)
+//        aaa.text = peripheral as! String
+//    }
 }
